@@ -1,0 +1,6 @@
+pip install --upgrade google-api-python-client
+
+pip install python-gflags
+
+pip install mysql-connector-python-rf
+
