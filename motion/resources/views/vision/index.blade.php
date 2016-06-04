@@ -36,12 +36,13 @@
                                         @foreach ($images as $image)
                                         <tr>
                                             <td class="text-center">
-                                                <a href="http://localhost/Motion_detection/motion/public/images/motion/{{ $image->img_name }}" class="lightbox"><img src="http://localhost/Motion_detection/motion/public/images/motion/{{ $image->img_name }}" alt="" class="img-media"></a>
+                                                <a href="{{ URL::to('../public/images/motion/' . $image->img_name) }}" class="lightbox"><img src="{{ URL::to('../public/images/motion/' . $image->img_name) }}" alt="" class="img-media"></a>
                                             </td>
                                             <td>There is a {{ 100 * $image->percentage }} percent chance of {{ $image->description }} on the image</td>
-                                            <td>{{ $image->created_at }}.</td>
+                                            <td>{{ date('G:i:s j/n/Y', strtotime($image->created_at)) }}</td>
                                             <td class="text-center">
-                                                <a href="#"><i class="icon-remove4"></i> Remove image</a>  
+                                            <a href="{{URL::action('ImageController@destroy',['id'=>$image->id]) }}" 
+onclick=" return confirm('Are you sure you want to delete this?')"><i class="icon-remove4"></i> Remove image</a>  
                                             </td>
                                         </tr>
                                         
@@ -61,6 +62,14 @@
 
 </div>
 <!-- /page container -->
-    
+
+<script>
+    $(document).ready(
+            function() {
+                setInterval(function() {
+                    $('.datatable-media');
+                }, 300);
+            });
+</script>   
 
 @endsection

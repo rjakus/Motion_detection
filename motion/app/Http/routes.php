@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 Route::auth();
 Route::resource('vision', 'ImageController');
 
-Route::get('/home', 'HomeController@index');
+

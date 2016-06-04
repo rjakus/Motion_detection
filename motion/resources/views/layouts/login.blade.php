@@ -80,11 +80,6 @@
                 </li>
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" href="#">
-                        Configuration
-                    </a>
-                </li>
-                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>

@@ -32,25 +32,17 @@ class ImageController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return Response
      */
     public function show($id)
     {
-    	$vision = Image::find($id);
-      	return view('vision.show', array('vision' => $vision));
-    }
+        $image = Image::find($id);
+        $image->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+        $images = Image::get();
+        return view('vision.index', array('images' => $images));
     }
 }
