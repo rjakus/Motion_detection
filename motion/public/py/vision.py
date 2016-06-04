@@ -18,8 +18,8 @@ SCOPES = 'https://www.googleapis.com/auth/cloud-platform'
 CLIENT_SECRET = 'client_secret.json'
 
 inputfile  = args.input 
-#"/opt/lampp/htdocs/pus/public/images/motion/index.jpg"
-img_name = inputfile[43:]
+#"/opt/lamp/htdocs/Motion_detection/motion/public/images/motion/index.jpg"
+img_name = inputfile[48:]
 
 store = file.Storage('storage.json')
 creds = store.get()

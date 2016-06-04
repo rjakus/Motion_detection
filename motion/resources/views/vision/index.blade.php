@@ -36,7 +36,7 @@
                                         @foreach ($images as $image)
                                         <tr>
                                             <td class="text-center">
-                                                <a href="http://placehold.it/300" class="lightbox"><img src="{{URL::asset('/images/motion/$image->img_name')}}" alt="" class="img-media"></a>
+                                                <a href="http://placehold.it/300" class="lightbox"><img src="{{URL::asset('/$image->img_name')}}" alt="" class="img-media"></a>
                                             </td>
                                             <td>There is a {{ 100 * $image->percentage }} percent chance of {{ $image->description }} on the image</td>
                                             <td>{{ $image->created_at }}.</td>
