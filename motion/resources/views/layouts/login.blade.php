@@ -101,7 +101,7 @@
     @yield('content')
     
     <!-- Footer -->
-    <div class="footer clearfix">
+    <div class="footer clearfix login_footer">
         <div class="pull-left">&copy; 2016. Created by 
             <a href="https://www.facebook.com/elicul93">Enzo Licul</a>
             &

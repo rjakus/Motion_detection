@@ -20,7 +20,7 @@
                 <div class="tab-content centered">
                     <div class="panel-body centered">
                         <img id="liveCam" src="http://localhost:8081/">
-                        <!-- <img id="liveCam" src="{{URL::asset('/images/index.jpg')}}"> --> 
+                        <!-- <img id="liveCam" src="{{URL::asset('/images/index.jpg')}}">  -->
                     </div>
                 </div>
             </div>

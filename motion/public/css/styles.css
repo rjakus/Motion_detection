@@ -6481,3 +6481,26 @@ li.plupload_droptext {
 .sidebar-narrow .page-content {
     margin-left: 25px;
 }
+
+.login-wrapper {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    margin-left: -150px;
+    margin-top: -180px;
+}
+
+.login_footer{
+    margin-top: 450px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0px; 
+    margin-right: 0px;
+}
+
+.panel-body {
+    padding: 45px;
+}

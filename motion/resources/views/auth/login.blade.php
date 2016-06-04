@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 @section('content')
 <!-- Login wrapper -->
@@ -60,5 +60,4 @@
         </div> 
     </div>  
 <!-- /login wrapper -->
-
 @endsection

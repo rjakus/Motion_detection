@@ -8,8 +8,8 @@
     <div class="page-content">
         <div class="page-content-inner">
             <!-- Page header -->
-            <div class="page-header centered">
-                <div class="page-title centered">
+            <div class="page-header">
+                <div class="page-title">
                     <br>
                     <br>
                     <h2>Welcome to Motion detection!</h2>
