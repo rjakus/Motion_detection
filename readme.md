@@ -857,7 +857,7 @@ on_picture_save python /home/websites/motion/public/py/vision.py %f
 
 ## Running the application
 
-To run the application you'll need to create a project in the Google Cloud and get the .json credentials (https://cloud.google.com/vision/docs/quickstart#whats_next and https://cloud.google.com/vision/docs/auth-template/cloud-api-auth#using_the_console_name_short). After you have done that copy your clinet_secret.json and storage.json in motion/public/py directory.
+To run the application you'll need to create a project in the Google Cloud and get the .json credentials (https://cloud.google.com/vision/docs/quickstart#whats_next and https://cloud.google.com/vision/docs/auth-template/cloud-api-auth#using_the_console_name_short). After you have done that copy your clinet_secret.json and storage.json in motion/public/py directory. Now get the ip address of your raspberry and open it in your browser **example http://192.168.1.136/**
 
 ## Built With
 
