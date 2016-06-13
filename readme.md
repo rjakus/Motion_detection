@@ -874,4 +874,4 @@ To run the application you'll need to create a project in the Google Cloud and g
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](license.md) file for details
