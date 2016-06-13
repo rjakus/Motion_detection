@@ -14,6 +14,8 @@
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::auth();
-Route::resource('vision', 'ImageController');
+Route::get('vision', 'ImageController@index');
+Route::get('vision/destroy', 'ImageController@destroy');
+Route::get('vision/{vision}', 'ImageController@delete');
 
 

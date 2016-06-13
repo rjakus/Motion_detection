@@ -6504,3 +6504,7 @@ li.plupload_droptext {
 .panel-body {
     padding: 45px;
 }
+
+#noStream{
+ text-align: center;
+}

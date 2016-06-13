@@ -18,7 +18,17 @@ class HomeController extends Controller
         if (!Auth::check()) {
             return view('welcome');
         }else{
-            return view('home'); 
+		$file = url('/webcam');
+		$file_headers = @get_headers($file);
+
+		if($file_headers[0] == 'HTTP/1.1 502 Bad Gateway') {
+    			$exists = false;
+		}
+		else {
+    			$exists = true;
+		}
+		return view('home', array('exists' => $exists));
+        	 
         }
     }
 

@@ -4,3 +4,8 @@ pip install python-gflags
 
 pip install mysql-connector-python-rf
 
+sudo iptables -A INPUT -j ACCEPT -m state --state ESTABLISHED,RELATED
+pi@raspberrypi:/home/websites/motion $ sudo iptables -A INPUT -p tcp --dport 5901 -m state --state NEW -j ACCEPT
+pi@raspberrypi:/home/websites/motion $ sudo iptables -A INPUT -p tcp --dport 8081 -m state --state NEW -j ACCEPT
+pi@raspberrypi:/home/websites/motion $ sudo iptables -A INPUT -p tcp --dport 8080 -m state --state NEW -j ACCEPT
+

@@ -18,9 +18,13 @@
             <!-- Page tabs -->
             <div class="tabbable page-tabs centered">
                 <div class="tab-content centered">
-                    <div class="panel-body centered">
-                        <img id="liveCam" src="http://localhost:8081/">
-                        <!-- <img id="liveCam" src="{{URL::asset('/images/index.jpg')}}">  -->
+                    <div class="panel-body center-block">
+                        @if ($exists)
+				<img class="img-responsive center-block" src="{{ url('/webcam') }}">
+                        @else
+				<h1><span class='center-block'>Can't get stream connection!<span></h1>
+			@endif
+			<!-- <img id="liveCam" src="{{URL::asset('/images/motion/index.jpg')}}"> -->
                     </div>
                 </div>
             </div>

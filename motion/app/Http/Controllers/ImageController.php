@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Http\Requests;
 use App\Image;
+use File;
 
 class ImageController extends Controller
 {
@@ -28,21 +29,40 @@ class ImageController extends Controller
     public function index()
     {
         $images = Image::get();
-        return view('vision.index', array('images' => $images));
+	$count = $images->count();
+        return view('vision.index', array('images' => $images, 'count' => $count));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage and db.
      *
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function delete($id)
     {
-        $image = Image::find($id);
+	$image = Image::find($id);
+        $filename = $image->img_name;
+        $path = public_path().'/images/motion/'.$filename;
+
+        File::delete($path);
         $image->delete();
 
-        $images = Image::get();
-        return view('vision.index', array('images' => $images));
+	return redirect()->action('ImageController@index');
     }
+
+    /**
+     * Remove all resources from storage and db.
+     *
+     * @return Response
+     */
+    public function destroy()
+    {
+      	$path = public_path().'/images/motion';
+        File::cleanDirectory($path);
+        Image::truncate();
+
+	return redirect()->action('ImageController@index');
+     }
+
 }

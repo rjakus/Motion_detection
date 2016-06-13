@@ -65,25 +65,22 @@
         <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
             @if (Auth::guest())
                 <li><a class="dropdown-toggle" href="{{ url('/login') }}">Login</a></li>
-                <li><a class="dropdown-toggle" href="{{ url('/register') }}">Register</a></li>
+               <!-- <li><a class="dropdown-toggle" href="{{ url('/register') }}">Register</a></li> -->
             @else
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="{{ url('/home') }}">
                         Live camera
                     </a>
                 </li>
-
-                <li class="dropdown">
+		<li class="dropdown">
                     <a class="dropdown-toggle" href="{{ url('/vision') }}">
                         Data report
                     </a>
                 </li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">
+		<li class="dropdown">
+		    <a class="dropdown-toggle" data-toggle="dropdown">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
-
                     <ul class="dropdown-menu dropdown-menu-right icons-right">
                         <li><a href="{{ url('/logout') }}"><i class="icon-exit"></i> Logout</a></li>
                     </ul>
@@ -108,6 +105,6 @@
     <!-- JavaScripts -->
     <script src="{{{ asset('/js/bootstrap.min.js') }}}"></script>
     <script src="{{{ asset('/js/application.js') }}}"></script>
-
+ 
 </body>
 </html>

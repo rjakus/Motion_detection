@@ -65,7 +65,7 @@
         <ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
             @if (Auth::guest())
                 <li><a class="dropdown-toggle" href="{{ url('/login') }}">Login</a></li>
-                <li><a class="dropdown-toggle" href="{{ url('/register') }}">Register</a></li>
+               <!--  <li><a class="dropdown-toggle" href="{{ url('/register') }}">Register</a></li> -->
             @else
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="{{ url('/home') }}">
@@ -94,16 +94,6 @@
     
 
     @yield('content')
-    
-    <!-- Footer -->
-    <div class="footer clearfix login_footer">
-        <div class="pull-left">&copy; 2016. Created by 
-            <a href="https://www.facebook.com/elicul93">Enzo Licul</a>
-            &
-            <a href="https://www.facebook.com/rikardo.jakus.7">Rikardo Jakus</a>
-        </div>
-    </div>
-    <!-- /footer -->
 
     <!-- JavaScripts -->
     <script src="{{{ asset('/js/bootstrap.min.js') }}}"></script>

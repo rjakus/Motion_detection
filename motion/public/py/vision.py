@@ -15,15 +15,15 @@ parser.add_argument("input", help="Input image directory to get details")
 args = parser.parse_args()
 
 SCOPES = 'https://www.googleapis.com/auth/cloud-platform'
-CLIENT_SECRET = '/opt/lampp/htdocs/Motion_detection/motion/public/py/client_secret.json'
+CLIENT_SECRET = '/home/websites/motion/public/py/client_secret.json'
 
 inputfile = args.input 
-#/opt/lampp/htdocs/Motion_detection/motion/public/images/motion//02-04062016182321-03.jpg
-img_name = inputfile[64:]
-inputfile = "/opt/lampp/htdocs/Motion_detection/motion/public/images/motion/" + inputfile[64:]
+#/home/websites/motion/public/images/motion//02-04062016182321-03.jpg
+img_name = inputfile[44:]
+inputfile = "/home/websites/motion/public/images/motion/" + inputfile[44:]
 #print inputfile
 
-store = file.Storage('/opt/lampp/htdocs/Motion_detection/motion/public/py/storage.json')
+store = file.Storage('/home/websites/motion/public/py/storage.json')
 creds = store.get()
    
 if not creds or creds.invalid:
@@ -47,28 +47,24 @@ with open(inputfile, 'rb') as image:
         })
     response = service_request.execute()
     
-    i = 0
-    while ( 0.90 <= response['responses'][0]['labelAnnotations'][i]['score'] ):
-        #print response['responses'][0]['labelAnnotations'][i]['description']    
+    #print response['responses'][0]['labelAnnotations'][i]['description']    
         
-        cnx = mysql.connector.connect(user='root', password='',
+    cnx = mysql.connector.connect(user='root', password='',
                               host='127.0.0.1',
                               database='motion')
-        cursor = cnx.cursor()
-        add_info = ("INSERT INTO images "
+    cursor = cnx.cursor()
+    add_info = ("INSERT INTO images "
                "(img_name, description, percentage, created_at) "
                "VALUES (%s, %s, %s, %s)")
                
-        now = time.strftime('%Y-%m-%d %H:%M:%S')
-        data_info = (img_name, response['responses'][0]['labelAnnotations'][i]['description'], response['responses'][0]['labelAnnotations'][i]['score'], now)
+    now = time.strftime('%Y-%m-%d %H:%M:%S')
+    data_info = (img_name, response['responses'][0]['labelAnnotations'][0]['description'], response['responses'][0]['labelAnnotations'][0]['score'], now)
 
-        cursor.execute(add_info, data_info)
-        cnx.commit()
+    cursor.execute(add_info, data_info)
+    cnx.commit()
         
-        cursor.close()
-        cnx.close()
-               
-        i = i + 1
+    cursor.close()
+    cnx.close()
     
     cnx.close()
 
